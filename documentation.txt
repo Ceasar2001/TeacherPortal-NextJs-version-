@@ -1,0 +1,29 @@
+to display user profile or its google avatar that he is using in account,
+
+just put the following in the the following files
+ path : next.config.mjs
+ code : 
+
+        const nextConfig = {
+            images:{
+                domains: ['lh3.googleusercontent.com']
+            }
+        };
+
+and put this anywhere you want
+
+<div>
+    <Image 
+        src={user?.picture} width={35}
+        height={35}
+        alt='user'
+        className='rounded-full'
+    />
+</div>
+
+
+and if you want to display the user name 
+<div>
+    <h2>{user?.given_name.name} {user?.family_name}</h2>
+    <h2>{user?.email}</h2>
+</div>
